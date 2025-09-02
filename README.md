@@ -42,6 +42,8 @@ npm run preview
 - **Package Manager**: npm
 - **Build Tool**: Vite
 - **Deployment**: Vercel/Netlify
+- **SEO**: Local SEO optimization with structured data
+- **Design System**: Configurable design tokens for multi-school deployment
 
 ## 📁 Project Structure
 
@@ -50,15 +52,38 @@ tredumo-website/
 ├── public/                 # Static assets
 ├── src/
 │   ├── components/        # Reusable UI components
+│   │   ├── SEO/          # SEO optimization components
+│   │   ├── features/     # Interactive feature components
+│   │   └── common/       # Common UI components
+│   ├── config/           # Configuration files
+│   │   ├── schoolConfig.ts    # School-specific configuration
+│   │   └── designSystem.ts    # Design system tokens
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Utility functions
 │   ├── pages/            # Page components
 │   ├── styles/           # Global styles and Tailwind config
 │   ├── assets/           # Images, icons, and media
-│   ├── utils/            # Utility functions
 │   └── main.tsx          # Application entry point
 ├── docs/                 # Documentation
 ├── tests/                # Test files
 └── README.md
 ```
+
+## 🏫 Multi-School Configuration
+
+This platform supports multiple schools with customizable branding and content:
+
+### School Configuration
+- **NAP Information**: Name, Address, Phone consistency across all pages
+- **Local SEO**: Location-specific content and keywords
+- **Branding**: Customizable colors, logos, and design tokens
+- **Content**: School-specific features, curriculum, and policies
+
+### Design System
+- **Color Palettes**: Primary, secondary, accent, and neutral colors
+- **Typography**: Configurable font families and sizes
+- **Components**: Reusable UI components with theme support
+- **Animations**: Consistent loading and interaction animations
 
 ## 🎯 Features
 
@@ -68,6 +93,8 @@ tredumo-website/
 - **Attendance Monitoring** - Real-time attendance tracking
 - **Financial Management** - Fee collection and financial reporting
 - **Communication Hub** - Integrated messaging and notifications
+- **Local SEO Optimization** - Enhanced visibility in local search results
+- **Interactive Features** - Virtual tours, tuition calculator, teacher profiles
 
 ### 📱 Platform Access
 - **Web Application** - Full-featured web platform
