@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import MegaNavbar from "./components/navigation/MegaNavbar";
+import MegaFooter from "./components/navigation/MegaFooter";
 import HomePage from "./pages/HomePage";
+import SchoolHomePage from "./pages/SchoolHomePage";
 import FeaturesPage from "./pages/FeaturesPage";
 import AdmissionsPage from "./pages/features/AdmissionsPage";
 import FeatureRequestsPage from "./pages/developers/FeatureRequest";
@@ -50,15 +51,28 @@ import LeaderboardPage from "./pages/community/LeaderboardPage";
 
 import "../public/fonts/fonts.css";
 import ScrollToTop from "../src/components/ScrollToTop";
+import { generateThemeCSS, getCurrentTheme } from "./config/themeConfig";
 
 function App() {
   const [theme, setTheme] = useState("light");
+  const themeConfig = getCurrentTheme();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
     setTheme(savedTheme);
     document.documentElement.classList.toggle("dark", savedTheme === "dark");
     document.documentElement.classList.toggle("light", savedTheme === "light");
+    
+    // Inject theme CSS
+    const existingStyle = document.getElementById('theme-styles');
+    if (existingStyle) {
+      existingStyle.remove();
+    }
+    
+    const style = document.createElement('style');
+    style.id = 'theme-styles';
+    style.textContent = generateThemeCSS(themeConfig);
+    document.head.appendChild(style);
   }, []);
 
   const toggleTheme = () => {
@@ -78,10 +92,10 @@ function App() {
             : "bg-white text-black"
         }`}
       >
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<HomePage theme={theme} />} />
+          <Route path="/" element={<SchoolHomePage theme={theme} toggleTheme={toggleTheme} />} />
+          <Route path="/tredumo" element={<HomePage theme={theme} />} />
           <Route path="/features" element={<FeaturesPage theme={theme} />} />
           <Route
             path="/features/admissions"
@@ -174,7 +188,6 @@ function App() {
 
           <Route path="*" element={<NotFoundPage theme={theme} />} />
         </Routes>
-        <Footer theme={theme} />
       </div>
     </Router>
   );
