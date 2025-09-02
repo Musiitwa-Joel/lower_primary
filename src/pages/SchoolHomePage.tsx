@@ -15,6 +15,18 @@ import WelfareHub from "../components/features/WelfareHub";
 import AIChatbot from "../components/features/AIChatbot";
 import ParentTestimonials from "../components/features/ParentTestimonials";
 import CurriculumExplorer from "../components/features/CurriculumExplorer";
+import NewsMarquee from "../components/features/NewsMarquee";
+import QuickLinksPanel from "../components/features/QuickLinksPanel";
+import UpcomingEventsWidget from "../components/features/UpcomingEventsWidget";
+import PrincipalMessage from "../components/features/PrincipalMessage";
+import OnlineAdmissionSystem from "../components/features/OnlineAdmissionSystem";
+import ResultsPortal from "../components/features/ResultsPortal";
+import FacilitiesGallery from "../components/features/FacilitiesGallery";
+import StudentHousesSystem from "../components/features/StudentHousesSystem";
+import VirtualClassDemo from "../components/features/VirtualClassDemo";
+import InteractiveCampusMap from "../components/features/InteractiveCampusMap";
+import CareerCounselingHub from "../components/features/CareerCounselingHub";
+import FeePaymentGateway from "../components/features/FeePaymentGateway";
 import GoogleBusinessIntegration from "../components/features/GoogleBusinessIntegration";
 import LocalContentOptimizer from "../components/features/LocalContentOptimizer";
 import NAP from "../components/common/NAP";
@@ -88,8 +100,13 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({ theme, toggleTheme }) =
       {/* Navigation */}
       <MegaNavbar theme={theme} toggleTheme={toggleTheme} />
 
+      {/* News Marquee */}
+      <div className="fixed top-20 left-0 right-0 z-40">
+        <NewsMarquee theme={theme} />
+      </div>
+
       {/* Hero Section */}
-      <section className={`relative min-h-screen flex items-center ${
+      <section className={`relative min-h-screen flex items-center pt-16 ${
         theme === "dark" ? "bg-black" : "bg-white"
       } overflow-hidden`}>
         {/* Background */}
@@ -235,6 +252,24 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({ theme, toggleTheme }) =
         </div>
       </section>
 
+      {/* Quick Links Panel */}
+      <section className={`py-20 px-4 sm:px-6 lg:px-8 ${
+        theme === "dark" ? "bg-black" : "bg-white"
+      }`}>
+        <div className="max-w-7xl mx-auto">
+          <QuickLinksPanel theme={theme} />
+        </div>
+      </section>
+
+      {/* Principal's Message */}
+      <section className={`py-20 px-4 sm:px-6 lg:px-8 ${
+        theme === "dark" ? "bg-black" : "bg-white"
+      }`}>
+        <div className="max-w-7xl mx-auto">
+          <PrincipalMessage theme={theme} />
+        </div>
+      </section>
+
       {/* Interactive Features Grid */}
       <section className={`py-20 px-4 sm:px-6 lg:px-8 ${
         theme === "dark" ? "bg-black" : "bg-white"
@@ -259,22 +294,49 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({ theme, toggleTheme }) =
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <TuitionCalculator schoolConfig={schoolConfig} theme={theme} />
+          {/* Upcoming Events Widget */}
+          <UpcomingEventsWidget theme={theme} />
+
             <VirtualCampusTour schoolConfig={schoolConfig} theme={theme} />
           </div>
+
+          {/* Online Admission System */}
+          <OnlineAdmissionSystem theme={theme} />
+
+          {/* Results Portal */}
+          <ResultsPortal theme={theme} />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <DigitalProspectus schoolConfig={schoolConfig} theme={theme} />
             <StudentPortal theme={theme} />
           </div>
 
+          {/* Virtual Class Demo */}
+          <VirtualClassDemo theme={theme} />
+
           <div className="mb-16">
             <TeacherShowcase schoolConfig={schoolConfig} theme={theme} />
           </div>
+
+          {/* Facilities Gallery */}
+          <FacilitiesGallery theme={theme} />
+
+          {/* Interactive Campus Map */}
+          <InteractiveCampusMap theme={theme} />
+
+          {/* Student Houses System */}
+          <StudentHousesSystem theme={theme} />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <EventsCalendar schoolConfig={schoolConfig} theme={theme} />
             <WelfareHub schoolConfig={schoolConfig} theme={theme} />
           </div>
+
+          {/* Career Counseling Hub */}
+          <CareerCounselingHub theme={theme} />
+
+          {/* Fee Payment Gateway */}
+          <FeePaymentGateway theme={theme} />
 
           <div className="mb-16">
             <CurriculumExplorer schoolConfig={schoolConfig} theme={theme} />
