@@ -7,6 +7,17 @@ import SubjectsPage from "./pages/SubjectsPage";
 import AssessmentExamsPage from "./pages/AssessmentExamsPage";
 import DigitalLearningPage from "./pages/DigitalLearningPage";
 import CoCurricularPage from "./pages/CoCurricularPage";
+import CoreSubjectsPage from "./pages/CoreSubjectsPage";
+import SciencesPage from "./pages/SciencesPage";
+import LanguagesPage from "./pages/LanguagesPage";
+import ICTTechPage from "./pages/ICTTechPage";
+import CreativeArtsPage from "./pages/CreativeArtsPage";
+import VocationalSkillsPage from "./pages/VocationalSkillsPage";
+import PhysicalEducationPage from "./pages/PhysicalEducationPage";
+import DigitalLibraryPage from "./pages/DigitalLibraryPage";
+import OnlineLearningPage from "./pages/OnlineLearningPage";
+import StudyMaterialsPage from "./pages/StudyMaterialsPage";
+import ExamPreparationPage from "./pages/ExamPreparationPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -91,6 +102,71 @@ function App() {
               <CoCurricularPage theme={theme} toggleTheme={toggleTheme} />
             }
           />
+
+          {/* Subject Category Pages */}
+          <Route
+            path="/academics/subjects/core_subjects"
+            element={
+              <CoreSubjectsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/subjects/sciences"
+            element={<SciencesPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/academics/subjects/languages"
+            element={<LanguagesPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/academics/subjects/ict_tech"
+            element={<ICTTechPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/academics/subjects/creative_arts"
+            element={
+              <CreativeArtsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/subjects/vocational_skills"
+            element={
+              <VocationalSkillsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/subjects/pe"
+            element={
+              <PhysicalEducationPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+
+          {/* Academic Resource Pages */}
+          <Route
+            path="/academics/library"
+            element={
+              <DigitalLibraryPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/online"
+            element={
+              <OnlineLearningPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/materials"
+            element={
+              <StudyMaterialsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/exams"
+            element={
+              <ExamPreparationPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+
           {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
 
           <Route path="/careers" element={<CareersPage theme={theme} />} />
