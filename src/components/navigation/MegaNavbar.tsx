@@ -51,22 +51,48 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
         {
           title: "Curriculum",
           links: [
-            { name: "Primary School", path: "/academics/primary" },
-            { name: "Secondary School", path: "/academics/secondary" },
-            { name: "A-Level Programs", path: "/academics/a-level" },
+            { name: "Overview", path: "/academics/curriculum/overview" },
             {
-              name: "International Programs",
-              path: "/academics/international",
+              name: "Subjects Offered",
+              path: "/academics/curriculum/subjects-offered",
+            },
+            {
+              name: "Assessment & Exams",
+              path: "/academics/curriculum/assessment_exams",
+            },
+            {
+              name: "Digital Learning Resources",
+              path: "/academics/curriculum/digital_learning_exams",
+            },
+            {
+              name: "Co-Curricular Integration",
+              path: "/academics/curriculum/co-curricular_integration",
+            },
+            {
+              name: "Download Curriculum Guide (PDF)",
+              path: "/academics/curriculum/download_curriculum_guide",
             },
           ],
         },
         {
           title: "Subjects",
           links: [
-            { name: "Sciences", path: "/academics/sciences" },
-            { name: "Mathematics", path: "/academics/mathematics" },
-            { name: "Languages", path: "/academics/languages" },
-            { name: "Arts & Humanities", path: "/academics/arts" },
+            {
+              name: "Core Subjects",
+              path: "/academics/subjects/core_subjects",
+            },
+            { name: "Sciences", path: "/academics/subjects/sciences" },
+            { name: "Languages", path: "/academics/subjects/languages" },
+            { name: "ICT & Technology", path: "/academics/subjects/ict_tech" },
+            {
+              name: "Creative Arts",
+              path: "/academics/subjects/creative_arts",
+            },
+            {
+              name: "Vocational Skills",
+              path: "/academics/subjects/vocational_skills",
+            },
+            { name: "Physical Education", path: "/academics/subjects/pe" },
           ],
         },
         {
