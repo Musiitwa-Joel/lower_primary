@@ -288,7 +288,7 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
       </div>
 
       {/* Main Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
@@ -330,7 +330,7 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             {Object.entries(megaMenuItems).map(([key, item]) => (
               <div
                 key={key}
-                className="relative"
+                className=""
                 onMouseEnter={() => {
                   console.log("Setting activeDropdown to:", key);
                   setActiveDropdown(key);
@@ -351,108 +351,6 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                     }`}
                   />
                 </button>
-
-                {/* Mega Menu Dropdown */}
-                <AnimatePresence>
-                  {activeDropdown === key && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.1 }}
-                      className="absolute w-full"
-                    >
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "100%",
-                          left: "50%",
-                          transform: "translateX(-50%)",
-                          zIndex: 99999,
-                          width: "90vw",
-                          maxWidth: "60rem",
-                          marginTop: "0.5rem",
-                        }}
-                        className={`${
-                          theme === "dark"
-                            ? "bg-black/95 border-white/10"
-                            : "bg-white/95 border-black/10"
-                        } backdrop-blur-xl border rounded-2xl shadow-2xl p-4 relative`}
-                      >
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                          {item.sections.map((section, index) => (
-                            <div key={index}>
-                              <h3
-                                className={`font-semibold mb-2 ${
-                                  theme === "dark" ? "text-white" : "text-black"
-                                }`}
-                              >
-                                {section.title}
-                              </h3>
-                              <ul className="space-y-2">
-                                {section.links.map((link) => (
-                                  <li key={link.path}>
-                                    <Link
-                                      to={link.path}
-                                      className={`block hover:text-primary-500 transition-colors ${
-                                        theme === "dark"
-                                          ? "text-white/70"
-                                          : "text-black/70"
-                                      }`}
-                                    >
-                                      {link.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                          <div
-                            className={`p-4 rounded-xl ${
-                              theme === "dark" ? "bg-white/5" : "bg-black/5"
-                            }`}
-                          >
-                            <img
-                              src={item.featured.image}
-                              alt={item.featured.title}
-                              className="w-full h-auto max-h-24 object-cover rounded-lg mb-2"
-                              onError={(e) => {
-                                console.error(
-                                  "Featured image failed to load:",
-                                  item.featured.image
-                                );
-                                e.currentTarget.src =
-                                  "https://via.placeholder.com/400x96";
-                              }}
-                            />
-                            <h3
-                              className={`font-semibold mb-1 ${
-                                theme === "dark" ? "text-white" : "text-black"
-                              }`}
-                            >
-                              {item.featured.title}
-                            </h3>
-                            <p
-                              className={`text-sm mb-2 ${
-                                theme === "dark"
-                                  ? "text-white/70"
-                                  : "text-black/70"
-                              }`}
-                            >
-                              {item.featured.description}
-                            </p>
-                            <Link
-                              to={item.featured.link}
-                              className="text-primary-500 hover:text-primary-600 text-sm font-medium"
-                            >
-                              Learn More →
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
             ))}
 
@@ -485,6 +383,130 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
               Apply Now
             </Link>
           </div>
+
+          {/* Mega Menu Dropdown - Positioned relative to main container */}
+          <AnimatePresence>
+            {activeDropdown && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute left-0 right-0 top-full mt-2 z-50"
+                onMouseEnter={() => setActiveDropdown(activeDropdown)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <div
+                  className={`${
+                    theme === "dark"
+                      ? "bg-black/95 border-white/10"
+                      : "bg-white/95 border-black/10"
+                  } backdrop-blur-xl border rounded-2xl shadow-2xl p-6 mx-4`}
+                >
+                  {/* Render content based on activeDropdown */}
+                  {activeDropdown &&
+                    megaMenuItems[
+                      activeDropdown as keyof typeof megaMenuItems
+                    ] && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                        {megaMenuItems[
+                          activeDropdown as keyof typeof megaMenuItems
+                        ].sections.map((section, index) => (
+                          <div key={index}>
+                            <h3
+                              className={`font-semibold mb-3 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`}
+                            >
+                              {section.title}
+                            </h3>
+                            <ul className="space-y-2">
+                              {section.links.map((link) => (
+                                <li key={link.path}>
+                                  <Link
+                                    to={link.path}
+                                    className={`block hover:text-primary-500 transition-colors text-sm ${
+                                      theme === "dark"
+                                        ? "text-white/70"
+                                        : "text-black/70"
+                                    }`}
+                                  >
+                                    {link.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                        <div
+                          className={`p-4 rounded-xl ${
+                            theme === "dark" ? "bg-white/5" : "bg-black/5"
+                          }`}
+                        >
+                          <img
+                            src={
+                              megaMenuItems[
+                                activeDropdown as keyof typeof megaMenuItems
+                              ].featured.image
+                            }
+                            alt={
+                              megaMenuItems[
+                                activeDropdown as keyof typeof megaMenuItems
+                              ].featured.title
+                            }
+                            className="w-full h-24 object-cover rounded-lg mb-3"
+                            onError={(e) => {
+                              console.error(
+                                "Featured image failed to load:",
+                                megaMenuItems[
+                                  activeDropdown as keyof typeof megaMenuItems
+                                ].featured.image
+                              );
+                              e.currentTarget.src =
+                                "https://via.placeholder.com/400x96";
+                            }}
+                          />
+                          <h3
+                            className={`font-semibold mb-2 ${
+                              theme === "dark" ? "text-white" : "text-black"
+                            }`}
+                          >
+                            {
+                              megaMenuItems[
+                                activeDropdown as keyof typeof megaMenuItems
+                              ].featured.title
+                            }
+                          </h3>
+                          <p
+                            className={`text-sm mb-3 ${
+                              theme === "dark"
+                                ? "text-white/70"
+                                : "text-black/70"
+                            }`}
+                          >
+                            {
+                              megaMenuItems[
+                                activeDropdown as keyof typeof megaMenuItems
+                              ].featured.description
+                            }
+                          </p>
+                          <Link
+                            to={
+                              megaMenuItems[
+                                activeDropdown as keyof typeof megaMenuItems
+                              ].featured.link
+                            }
+                            className="text-primary-500 hover:text-primary-600 text-sm font-medium"
+                          >
+                            Learn More →
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-4">

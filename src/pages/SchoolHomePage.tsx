@@ -276,7 +276,7 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({
         </div>
       </section>
       {/* Quick Links Panel */}
-      <section
+      {/* <section
         className={`py-20 px-4 sm:px-6 lg:px-8 ${
           theme === "dark" ? "bg-black" : "bg-white"
         }`}
@@ -284,7 +284,7 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({
         <div className="max-w-7xl mx-auto">
           <QuickLinksPanel theme={theme} />
         </div>
-      </section>
+      </section> */}
       {/* Principal's Message */}
       <section
         className={`py-20 px-4 sm:px-6 lg:px-8 ${
@@ -321,66 +321,75 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <TuitionCalculator schoolConfig={schoolConfig} theme={theme} />
+          <div className="max-w-7xl mx-auto">
+            {/* <TuitionCalculator schoolConfig={schoolConfig} theme={theme} /> */}
             {/* Upcoming Events Widget */}
             <UpcomingEventsWidget theme={theme} />
 
-            <VirtualCampusTour schoolConfig={schoolConfig} theme={theme} />
+            {/* <VirtualCampusTour schoolConfig={schoolConfig} theme={theme} /> */}
           </div>
 
           {/* Online Admission System */}
-          <OnlineAdmissionSystem theme={theme} />
+          {/* <OnlineAdmissionSystem theme={theme} /> */}
 
           {/* Results Portal */}
-          <ResultsPortal theme={theme} />
+          {/* <ResultsPortal theme={theme} /> */}
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <DigitalProspectus schoolConfig={schoolConfig} theme={theme} />
             <StudentPortal theme={theme} />
-          </div>
+          </div> */}
 
           {/* Virtual Class Demo */}
-          <VirtualClassDemo theme={theme} />
+          {/* <VirtualClassDemo theme={theme} /> */}
 
           <div className="mb-16">
             <TeacherShowcase schoolConfig={schoolConfig} theme={theme} />
           </div>
 
           {/* Facilities Gallery */}
-          <FacilitiesGallery theme={theme} />
+          <div style={{ marginBottom: "4rem" }}>
+            <FacilitiesGallery theme={theme} />
+          </div>
 
           {/* Interactive Campus Map */}
-          <InteractiveCampusMap theme={theme} />
+          {/* <InteractiveCampusMap theme={theme} /> */}
 
           {/* Student Houses System */}
-          <StudentHousesSystem theme={theme} />
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            <EventsCalendar schoolConfig={schoolConfig} theme={theme} />
+          <div style={{ marginBottom: "4rem" }}>
+            <StudentHousesSystem theme={theme} />
+          </div>
+          {/* Welfare Hub */}
+          <div style={{ marginBottom: "4rem" }}>
             <WelfareHub schoolConfig={schoolConfig} theme={theme} />
           </div>
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <EventsCalendar schoolConfig={schoolConfig} theme={theme} />
+          </div> */}
 
           {/* Career Counseling Hub */}
-          <CareerCounselingHub theme={theme} />
+          {/* <CareerCounselingHub theme={theme} /> */}
 
           {/* Fee Payment Gateway */}
-          <FeePaymentGateway theme={theme} />
+          {/* <FeePaymentGateway theme={theme} /> */}
 
-          <div className="mb-16">
+          {/* <div className="mb-16">
             <CurriculumExplorer schoolConfig={schoolConfig} theme={theme} />
-          </div>
+          </div> */}
 
           <div className="mb-16">
             <ParentTestimonials schoolConfig={schoolConfig} theme={theme} />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div style={{ marginBottom: "4rem" }}>
             <LocalContentOptimizer
               schoolConfig={schoolConfig}
               theme={theme}
               pageType="home"
             />
+          </div>
+
+          <div style={{ marginBottom: "4rem" }}>
             <GoogleBusinessIntegration
               schoolConfig={schoolConfig}
               theme={theme}

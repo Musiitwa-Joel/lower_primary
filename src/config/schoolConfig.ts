@@ -99,8 +99,8 @@ export const defaultSchoolConfig: SchoolConfig = {
     country: "Uganda",
     postalCode: "P.O. Box 12345",
     coordinates: {
-      lat: 0.3476,
-      lng: 32.5825,
+      lat: 0.09473561178701048,
+      lng: 32.50704944792388,
     },
   },
 
