@@ -114,7 +114,6 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({
         pageTitle={schoolConfig.name}
         pageDescription={schoolConfig.description}
       />
-      <NewsMarquee theme={theme} />
       {/* Navigation */}
       <MegaNavbar theme={theme} toggleTheme={toggleTheme} />
       {/* Hero Section */}
@@ -152,7 +151,7 @@ const SchoolHomePage: React.FC<SchoolHomePageProps> = ({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="inline-block px-6 py-2 rounded-full text-sm font-medium bg-primary-500/20 text-primary-500 mb-6"
+                  className="inline-block px-6 py-2 rounded-full text-sm font-medium bg-primary-500/20 text-primary-500 mb-6 mt-6"
                 >
                   Established {schoolConfig.established} •{" "}
                   {schoolConfig.address.city}, {schoolConfig.address.country}

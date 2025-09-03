@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  Menu, 
-  X, 
-  Sun, 
-  Moon, 
-  ChevronDown, 
+import {
+  Menu,
+  X,
+  Sun,
+  Moon,
+  ChevronDown,
   GraduationCap,
   Users,
   BookOpen,
@@ -13,10 +13,11 @@ import {
   Award,
   Phone,
   Mail,
-  MapPin
+  MapPin,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCurrentSchoolConfig } from "../../config/schoolConfig";
+import NewsMarquee from "../features/NewsMarquee";
 
 interface MegaNavbarProps {
   theme: string;
@@ -53,8 +54,11 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Primary School", path: "/academics/primary" },
             { name: "Secondary School", path: "/academics/secondary" },
             { name: "A-Level Programs", path: "/academics/a-level" },
-            { name: "International Programs", path: "/academics/international" }
-          ]
+            {
+              name: "International Programs",
+              path: "/academics/international",
+            },
+          ],
         },
         {
           title: "Subjects",
@@ -62,8 +66,8 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Sciences", path: "/academics/sciences" },
             { name: "Mathematics", path: "/academics/mathematics" },
             { name: "Languages", path: "/academics/languages" },
-            { name: "Arts & Humanities", path: "/academics/arts" }
-          ]
+            { name: "Arts & Humanities", path: "/academics/arts" },
+          ],
         },
         {
           title: "Resources",
@@ -71,16 +75,17 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Digital Library", path: "/academics/library" },
             { name: "Online Learning", path: "/academics/online" },
             { name: "Study Materials", path: "/academics/materials" },
-            { name: "Exam Preparation", path: "/academics/exams" }
-          ]
-        }
+            { name: "Exam Preparation", path: "/academics/exams" },
+          ],
+        },
       ],
       featured: {
         title: "Featured Program",
         description: "Cambridge International Curriculum",
-        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=400",
-        link: "/academics/cambridge"
-      }
+        image:
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=400",
+        link: "/academics/cambridge",
+      },
     },
     admissions: {
       title: "Admissions",
@@ -91,8 +96,8 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Online Application", path: "/admissions/apply" },
             { name: "Requirements", path: "/admissions/requirements" },
             { name: "Entrance Exams", path: "/admissions/exams" },
-            { name: "Transfer Students", path: "/admissions/transfer" }
-          ]
+            { name: "Transfer Students", path: "/admissions/transfer" },
+          ],
         },
         {
           title: "Financial Aid",
@@ -100,8 +105,8 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Scholarships", path: "/admissions/scholarships" },
             { name: "Bursaries", path: "/admissions/bursaries" },
             { name: "Payment Plans", path: "/admissions/payment-plans" },
-            { name: "Fee Structure", path: "/admissions/fees" }
-          ]
+            { name: "Fee Structure", path: "/admissions/fees" },
+          ],
         },
         {
           title: "Support",
@@ -109,16 +114,17 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Admissions FAQ", path: "/admissions/faq" },
             { name: "Campus Tours", path: "/admissions/tours" },
             { name: "Contact Admissions", path: "/admissions/contact" },
-            { name: "Important Dates", path: "/admissions/dates" }
-          ]
-        }
+            { name: "Important Dates", path: "/admissions/dates" },
+          ],
+        },
       ],
       featured: {
         title: "Apply Now",
         description: "Start your journey with us today",
-        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400",
-        link: "/admissions/apply"
-      }
+        image:
+          "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400",
+        link: "/admissions/apply",
+      },
     },
     student_life: {
       title: "Student Life",
@@ -129,8 +135,8 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Sports & Athletics", path: "/student-life/sports" },
             { name: "Clubs & Societies", path: "/student-life/clubs" },
             { name: "Arts & Culture", path: "/student-life/arts" },
-            { name: "Community Service", path: "/student-life/community" }
-          ]
+            { name: "Community Service", path: "/student-life/community" },
+          ],
         },
         {
           title: "Facilities",
@@ -138,25 +144,29 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Boarding Houses", path: "/student-life/boarding" },
             { name: "Dining Services", path: "/student-life/dining" },
             { name: "Health Center", path: "/student-life/health" },
-            { name: "Transportation", path: "/student-life/transport" }
-          ]
+            { name: "Transportation", path: "/student-life/transport" },
+          ],
         },
         {
           title: "Support",
           links: [
             { name: "Counseling Services", path: "/student-life/counseling" },
-            { name: "Academic Support", path: "/student-life/academic-support" },
+            {
+              name: "Academic Support",
+              path: "/student-life/academic-support",
+            },
             { name: "Career Guidance", path: "/student-life/career" },
-            { name: "Mental Wellness", path: "/student-life/wellness" }
-          ]
-        }
+            { name: "Mental Wellness", path: "/student-life/wellness" },
+          ],
+        },
       ],
       featured: {
         title: "Campus Life",
         description: "Experience our vibrant community",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=400",
-        link: "/student-life/overview"
-      }
+        image:
+          "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=400",
+        link: "/student-life/overview",
+      },
     },
     about: {
       title: "About",
@@ -167,8 +177,8 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Our Story", path: "/about/story" },
             { name: "Mission & Vision", path: "/about/mission" },
             { name: "Leadership Team", path: "/about/leadership" },
-            { name: "School Values", path: "/about/values" }
-          ]
+            { name: "School Values", path: "/about/values" },
+          ],
         },
         {
           title: "Faculty",
@@ -176,8 +186,8 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Teaching Staff", path: "/about/teachers" },
             { name: "Administrative Staff", path: "/about/admin" },
             { name: "Support Staff", path: "/about/support" },
-            { name: "Board of Directors", path: "/about/board" }
-          ]
+            { name: "Board of Directors", path: "/about/board" },
+          ],
         },
         {
           title: "Recognition",
@@ -185,24 +195,29 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
             { name: "Awards & Achievements", path: "/about/awards" },
             { name: "Accreditations", path: "/about/accreditations" },
             { name: "Partnerships", path: "/about/partnerships" },
-            { name: "Alumni Success", path: "/about/alumni" }
-          ]
-        }
+            { name: "Alumni Success", path: "/about/alumni" },
+          ],
+        },
       ],
       featured: {
         title: "Our Heritage",
         description: `Serving ${schoolConfig.address.city} since ${schoolConfig.established}`,
-        image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=400",
-        link: "/about/heritage"
-      }
-    }
+        image:
+          "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=400",
+        link: "/about/heritage",
+      },
+    },
   };
 
   const quickLinks = [
-    { name: "Student Portal", path: "/portal", icon: <Users className="h-4 w-4" /> },
+    {
+      name: "Student Portal",
+      path: "/portal",
+      icon: <Users className="h-4 w-4" />,
+    },
     { name: "Events", path: "/events", icon: <Calendar className="h-4 w-4" /> },
     { name: "News", path: "/news", icon: <BookOpen className="h-4 w-4" /> },
-    { name: "Contact", path: "/contact", icon: <Phone className="h-4 w-4" /> }
+    { name: "Contact", path: "/contact", icon: <Phone className="h-4 w-4" /> },
   ];
 
   return (
@@ -219,18 +234,23 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
       }`}
     >
       {/* Top Bar */}
-      <div className={`border-b ${
-        theme === 'dark' ? 'border-white/10' : 'border-black/10'
-      } ${isScrolled ? 'hidden' : 'block'}`}>
+      <div
+        className={`border-b ${
+          theme === "dark" ? "border-white/10" : "border-black/10"
+        } ${isScrolled ? "hidden" : "block"}`}
+      >
+        <div>
+          <NewsMarquee theme={theme} />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-10 text-sm">
             <div className="flex items-center space-x-6">
               <div className="flex items-center">
                 <Phone className="h-3 w-3 mr-2 text-primary-500" />
-                <a 
-                  href={`tel:${schoolConfig.phone.primary.replace(/\D/g, '')}`}
+                <a
+                  href={`tel:${schoolConfig.phone.primary.replace(/\D/g, "")}`}
                   className={`hover:text-primary-500 transition-colors ${
-                    theme === 'dark' ? 'text-white/70' : 'text-black/70'
+                    theme === "dark" ? "text-white/70" : "text-black/70"
                   }`}
                 >
                   {schoolConfig.phone.primary}
@@ -238,23 +258,24 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
               </div>
               <div className="flex items-center">
                 <Mail className="h-3 w-3 mr-2 text-primary-500" />
-                <a 
+                <a
                   href={`mailto:${schoolConfig.email.primary}`}
                   className={`hover:text-primary-500 transition-colors ${
-                    theme === 'dark' ? 'text-white/70' : 'text-black/70'
+                    theme === "dark" ? "text-white/70" : "text-black/70"
                   }`}
                 >
                   {schoolConfig.email.primary}
                 </a>
               </div>
             </div>
+
             <div className="flex items-center space-x-4">
               {quickLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={`flex items-center hover:text-primary-500 transition-colors ${
-                    theme === 'dark' ? 'text-white/70' : 'text-black/70'
+                    theme === "dark" ? "text-white/70" : "text-black/70"
                   }`}
                 >
                   {link.icon}
@@ -273,25 +294,31 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
               <img
-                src={schoolConfig.logo}
+                src={schoolConfig.logo || "https://via.placeholder.com/48"}
                 alt={schoolConfig.name}
                 className="h-12 w-12 object-contain"
                 onError={(e) => {
-                  // Fallback to icon if image fails to load
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  console.error("Logo failed to load:", schoolConfig.logo);
+                  e.currentTarget.src = "https://via.placeholder.com/48";
+                  e.currentTarget.nextElementSibling?.classList.remove(
+                    "hidden"
+                  );
                 }}
               />
-              <GraduationCap className="h-12 w-12 text-primary-500 hidden" />
+              {/* <GraduationCap className="h-12 w-12 text-primary-500 hidden" /> */}
               <div>
-                <span className={`text-xl font-bold ${
-                  theme === "dark" ? "text-white" : "text-black"
-                }`}>
+                <span
+                  className={`text-xl font-bold ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  }`}
+                >
                   {schoolConfig.shortName}
                 </span>
-                <div className={`text-xs ${
-                  theme === "dark" ? "text-white/60" : "text-black/60"
-                }`}>
+                <div
+                  className={`text-xs ${
+                    theme === "dark" ? "text-white/60" : "text-black/60"
+                  }`}
+                >
                   {schoolConfig.tagline}
                 </div>
               </div>
@@ -304,7 +331,10 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
               <div
                 key={key}
                 className="relative"
-                onMouseEnter={() => setActiveDropdown(key)}
+                onMouseEnter={() => {
+                  console.log("Setting activeDropdown to:", key);
+                  setActiveDropdown(key);
+                }}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
@@ -315,9 +345,11 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                   }`}
                 >
                   <span>{item.title}</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform ${
-                    activeDropdown === key ? 'rotate-180' : ''
-                  }`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform ${
+                      activeDropdown === key ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
 
                 {/* Mega Menu Dropdown */}
@@ -327,64 +359,95 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl ${
-                        theme === 'dark' 
-                          ? 'bg-black/95 border-white/10' 
-                          : 'bg-white/95 border-black/10'
-                      } backdrop-blur-xl border rounded-2xl shadow-2xl p-8`}
+                      transition={{ duration: 0.1 }}
+                      className="absolute w-full"
                     >
-                      <div className="grid grid-cols-4 gap-8">
-                        {/* Menu Sections */}
-                        {item.sections.map((section, index) => (
-                          <div key={index}>
-                            <h3 className={`font-semibold mb-4 ${
-                              theme === 'dark' ? 'text-white' : 'text-black'
-                            }`}>
-                              {section.title}
-                            </h3>
-                            <ul className="space-y-3">
-                              {section.links.map((link) => (
-                                <li key={link.path}>
-                                  <Link
-                                    to={link.path}
-                                    className={`block hover:text-primary-500 transition-colors ${
-                                      theme === 'dark' ? 'text-white/70' : 'text-black/70'
-                                    }`}
-                                  >
-                                    {link.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-
-                        {/* Featured Section */}
-                        <div className={`p-6 rounded-xl ${
-                          theme === 'dark' ? 'bg-white/5' : 'bg-black/5'
-                        }`}>
-                          <img
-                            src={item.featured.image}
-                            alt={item.featured.title}
-                            className="w-full h-32 object-cover rounded-lg mb-4"
-                          />
-                          <h3 className={`font-semibold mb-2 ${
-                            theme === 'dark' ? 'text-white' : 'text-black'
-                          }`}>
-                            {item.featured.title}
-                          </h3>
-                          <p className={`text-sm mb-4 ${
-                            theme === 'dark' ? 'text-white/70' : 'text-black/70'
-                          }`}>
-                            {item.featured.description}
-                          </p>
-                          <Link
-                            to={item.featured.link}
-                            className="text-primary-500 hover:text-primary-600 text-sm font-medium"
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "100%",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          zIndex: 99999,
+                          width: "90vw",
+                          maxWidth: "60rem",
+                          marginTop: "0.5rem",
+                        }}
+                        className={`${
+                          theme === "dark"
+                            ? "bg-black/95 border-white/10"
+                            : "bg-white/95 border-black/10"
+                        } backdrop-blur-xl border rounded-2xl shadow-2xl p-4 relative`}
+                      >
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                          {item.sections.map((section, index) => (
+                            <div key={index}>
+                              <h3
+                                className={`font-semibold mb-2 ${
+                                  theme === "dark" ? "text-white" : "text-black"
+                                }`}
+                              >
+                                {section.title}
+                              </h3>
+                              <ul className="space-y-2">
+                                {section.links.map((link) => (
+                                  <li key={link.path}>
+                                    <Link
+                                      to={link.path}
+                                      className={`block hover:text-primary-500 transition-colors ${
+                                        theme === "dark"
+                                          ? "text-white/70"
+                                          : "text-black/70"
+                                      }`}
+                                    >
+                                      {link.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                          <div
+                            className={`p-4 rounded-xl ${
+                              theme === "dark" ? "bg-white/5" : "bg-black/5"
+                            }`}
                           >
-                            Learn More →
-                          </Link>
+                            <img
+                              src={item.featured.image}
+                              alt={item.featured.title}
+                              className="w-full h-auto max-h-24 object-cover rounded-lg mb-2"
+                              onError={(e) => {
+                                console.error(
+                                  "Featured image failed to load:",
+                                  item.featured.image
+                                );
+                                e.currentTarget.src =
+                                  "https://via.placeholder.com/400x96";
+                              }}
+                            />
+                            <h3
+                              className={`font-semibold mb-1 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`}
+                            >
+                              {item.featured.title}
+                            </h3>
+                            <p
+                              className={`text-sm mb-2 ${
+                                theme === "dark"
+                                  ? "text-white/70"
+                                  : "text-black/70"
+                              }`}
+                            >
+                              {item.featured.description}
+                            </p>
+                            <Link
+                              to={item.featured.link}
+                              className="text-primary-500 hover:text-primary-600 text-sm font-medium"
+                            >
+                              Learn More →
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </motion.div>
@@ -401,9 +464,17 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                   ? "text-white/80 hover:text-white"
                   : "text-black/80 hover:text-black"
               }`}
-              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
             >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </button>
 
             {/* CTA Button */}
@@ -425,18 +496,29 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                   : "text-black/80 hover:text-black"
               }`}
             >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </button>
 
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => {
+                console.log("Toggling isOpen:", !isOpen);
+                setIsOpen(!isOpen);
+              }}
               className={`p-2 rounded-lg transition-colors ${
                 theme === "dark"
                   ? "text-white/80 hover:text-white"
                   : "text-black/80 hover:text-black"
               }`}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -456,28 +538,42 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
               } backdrop-blur-xl border-t rounded-b-2xl p-6 space-y-6`}
             >
               {/* Mobile Quick Contact */}
-              <div className={`p-4 rounded-xl ${
-                theme === 'dark' ? 'bg-white/5' : 'bg-black/5'
-              }`}>
-                <h3 className={`font-semibold mb-3 ${
-                  theme === 'dark' ? 'text-white' : 'text-black'
-                }`}>
+              <div
+                className={`p-4 rounded-xl ${
+                  theme === "dark" ? "bg-white/5" : "bg-black/5"
+                }`}
+              >
+                <h3
+                  className={`font-semibold mb-3 ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  }`}
+                >
                   Quick Contact
                 </h3>
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <Phone className="h-4 w-4 text-primary-500 mr-2" />
-                    <a 
-                      href={`tel:${schoolConfig.phone.primary.replace(/\D/g, '')}`}
-                      className={`text-sm ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}
+                    <a
+                      href={`tel:${schoolConfig.phone.primary.replace(
+                        /\D/g,
+                        ""
+                      )}`}
+                      className={`text-sm ${
+                        theme === "dark" ? "text-white/70" : "text-black/70"
+                      }`}
                     >
                       {schoolConfig.phone.primary}
                     </a>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="h-4 w-4 text-primary-500 mr-2" />
-                    <span className={`text-sm ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`}>
-                      {schoolConfig.address.city}, {schoolConfig.address.country}
+                    <span
+                      className={`text-sm ${
+                        theme === "dark" ? "text-white/70" : "text-black/70"
+                      }`}
+                    >
+                      {schoolConfig.address.city},{" "}
+                      {schoolConfig.address.country}
                     </span>
                   </div>
                 </div>
@@ -487,17 +583,21 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
               {Object.entries(megaMenuItems).map(([key, item]) => (
                 <div key={key}>
                   <button
-                    onClick={() => setActiveDropdown(activeDropdown === key ? null : key)}
+                    onClick={() =>
+                      setActiveDropdown(activeDropdown === key ? null : key)
+                    }
                     className={`flex items-center justify-between w-full py-2 ${
                       theme === "dark" ? "text-white" : "text-black"
                     } font-medium`}
                   >
                     {item.title}
-                    <ChevronDown className={`h-4 w-4 transition-transform ${
-                      activeDropdown === key ? 'rotate-180' : ''
-                    }`} />
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${
+                        activeDropdown === key ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
-                  
+
                   <AnimatePresence>
                     {activeDropdown === key && (
                       <motion.div
@@ -508,9 +608,13 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                       >
                         {item.sections.map((section, index) => (
                           <div key={index}>
-                            <h4 className={`text-sm font-medium mb-2 ${
-                              theme === 'dark' ? 'text-white/80' : 'text-black/80'
-                            }`}>
+                            <h4
+                              className={`text-sm font-medium mb-2 ${
+                                theme === "dark"
+                                  ? "text-white/80"
+                                  : "text-black/80"
+                              }`}
+                            >
                               {section.title}
                             </h4>
                             <ul className="space-y-2 ml-4">
@@ -519,7 +623,9 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                                   <Link
                                     to={link.path}
                                     className={`block text-sm hover:text-primary-500 transition-colors ${
-                                      theme === 'dark' ? 'text-white/60' : 'text-black/60'
+                                      theme === "dark"
+                                        ? "text-white/60"
+                                        : "text-black/60"
                                     }`}
                                   >
                                     {link.name}
@@ -529,6 +635,49 @@ const MegaNavbar: React.FC<MegaNavbarProps> = ({ theme, toggleTheme }) => {
                             </ul>
                           </div>
                         ))}
+
+                        {/* Added: Featured content for mobile (renders below sections) */}
+                        <div
+                          className={`p-4 rounded-xl ${
+                            theme === "dark" ? "bg-white/5" : "bg-black/5"
+                          }`}
+                        >
+                          <img
+                            src={item.featured.image}
+                            alt={item.featured.title}
+                            className="w-full h-auto max-h-32 object-cover rounded-lg mb-2" // Slightly taller max-h for mobile visibility
+                            onError={(e) => {
+                              console.error(
+                                "Featured image failed to load:",
+                                item.featured.image
+                              );
+                              e.currentTarget.src =
+                                "https://via.placeholder.com/400x96";
+                            }}
+                          />
+                          <h3
+                            className={`font-semibold mb-1 ${
+                              theme === "dark" ? "text-white" : "text-black"
+                            }`}
+                          >
+                            {item.featured.title}
+                          </h3>
+                          <p
+                            className={`text-sm mb-2 ${
+                              theme === "dark"
+                                ? "text-white/70"
+                                : "text-black/70"
+                            }`}
+                          >
+                            {item.featured.description}
+                          </p>
+                          <Link
+                            to={item.featured.link}
+                            className="text-primary-500 hover:text-primary-600 text-sm font-medium"
+                          >
+                            Learn More →
+                          </Link>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
