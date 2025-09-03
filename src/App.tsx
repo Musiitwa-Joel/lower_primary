@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import HomePage from "./pages/HomePage";
 import SchoolHomePage from "./pages/SchoolHomePage";
-import CaseStudiesPage from "./pages/CaseStudiesPage";
+import CurriculumOverviewPage from "./pages/CurriculumOverviewPage";
+import SubjectsPage from "./pages/SubjectsPage";
+import AssessmentExamsPage from "./pages/AssessmentExamsPage";
+import DigitalLearningPage from "./pages/DigitalLearningPage";
+import CoCurricularPage from "./pages/CoCurricularPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -59,11 +63,36 @@ function App() {
             path="/"
             element={<SchoolHomePage theme={theme} toggleTheme={toggleTheme} />}
           />
-          {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
           <Route
-            path="/case-studies"
-            element={<CaseStudiesPage theme={theme} />}
+            path="/academics/curriculum/overview"
+            element={
+              <CurriculumOverviewPage theme={theme} toggleTheme={toggleTheme} />
+            }
           />
+          <Route
+            path="/academics/curriculum/subjects-offered"
+            element={<SubjectsPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/academics/curriculum/assessment_exams"
+            element={
+              <AssessmentExamsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/curriculum/digital_learning_exams"
+            element={
+              <DigitalLearningPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/academics/curriculum/co-curricular_integration"
+            element={
+              <CoCurricularPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
+
           <Route path="/careers" element={<CareersPage theme={theme} />} />
           <Route path="/contact" element={<ContactPage theme={theme} />} />
           <Route path="/privacy" element={<PrivacyPage theme={theme} />} />
