@@ -18,6 +18,12 @@ import DigitalLibraryPage from "./pages/DigitalLibraryPage";
 import OnlineLearningPage from "./pages/OnlineLearningPage";
 import StudyMaterialsPage from "./pages/StudyMaterialsPage";
 import ExamPreparationPage from "./pages/ExamPreparationPage";
+import OnlineApplicationPage from "./pages/admissions/OnlineApplicationPage";
+import RequirementsPage from "./pages/admissions/RequirementsPage";
+import ScholarshipsPage from "./pages/admissions/ScholarshipsPage";
+import FeesPage from "./pages/admissions/FeesPage";
+import CampusToursPage from "./pages/admissions/CampusToursPage";
+import AdmissionsFAQPage from "./pages/admissions/AdmissionsFAQPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -167,6 +173,41 @@ function App() {
             }
           />
 
+          {/* Admissions Routes */}
+          <Route
+            path="/admissions/apply"
+            element={
+              <OnlineApplicationPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/requirements"
+            element={
+              <RequirementsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/scholarships"
+            element={
+              <ScholarshipsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/fees"
+            element={<FeesPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/admissions/tours"
+            element={
+              <CampusToursPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/faq"
+            element={
+              <AdmissionsFAQPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
           {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
 
           <Route path="/careers" element={<CareersPage theme={theme} />} />
