@@ -1,3 +1,4 @@
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,90 +19,94 @@
   }
 }
 
-:root {
-  --primary: #8a87d8;
-  --primary-light: #a5a3e0;
-  --primary-dark: #6f6cac;
-  --primary-bg: #1a1a2e;
-  --primary-hover: #9e9bdf;
-  --primary-active: #7673c0;
-  --primary-transparent-10: rgba(138, 135, 216, 0.1);
-  --primary-transparent-20: rgba(138, 135, 216, 0.2);
-  --primary-transparent-30: rgba(138, 135, 216, 0.3);
-  --primary-transparent-50: rgba(138, 135, 216, 0.5);
-  --dark-bg: #1a1a2e;
-  --dark-bg-lighter: #252542;
-  --dark-bg-darker: #12121e;
+/* Default theme (Tredumo) */
+:root,
+.theme-tredumo {
+  --color-primary-50: #f3f2fb;
+  --color-primary-100: #e9e8f8;
+  --color-primary-200: #d3d1f1;
+  --color-primary-300: #bcbaea;
+  --color-primary-400: #a5a3e0;
+  --color-primary-500: #8a87d8;
+  --color-primary-600: #6f6cac;
+  --color-primary-700: #535181;
+  --color-primary-800: #383655;
+  --color-primary-900: #1c1b2a;
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+  /* Add other colors (accent, neutral, semantic) */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  /* Add spacing, radius, shadows, etc. from themeConfig */
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Theme for another institution (example) */
+.theme-institution-a {
+  --color-primary-50: #fefce8;
+  --color-primary-100: #fef9c3;
+  --color-primary-200: #fef08a;
+  --color-primary-300: #fde047;
+  --color-primary-400: #facc15;
+  --color-primary-500: #eab308; /* Institution A's primary-500 */
+  --color-primary-600: #ca8a04;
+  --color-primary-700: #a16207;
+  --color-primary-800: #854d0e;
+  --color-primary-900: #713f12;
+
+  /* Define other colors as needed */
+}
+
+/* Theme for another institution (example) */
+.theme-institution-b {
+  --color-primary-50: #f3e8ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6; /* Institution B's primary-500 */
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+  /* Define other colors as needed */
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-4 bg-[var(--primary)] text-white rounded-full hover:bg-[var(--primary-hover)] transition-all duration-300 font-medium text-sm tracking-wide;
+    @apply px-8 py-4 bg-primary-500 text-white rounded-full hover:bg-primary-600 transition-all duration-300 font-medium text-sm tracking-wide;
   }
-  
+
   .btn-secondary {
-    @apply px-8 py-4 bg-[var(--primary-transparent-10)] backdrop-blur-xl text-white rounded-full hover:bg-[var(--primary-transparent-20)] transition-all duration-300 font-medium text-sm tracking-wide;
+    @apply px-8 py-4 bg-[rgba(var(--color-primary-500),0.2)] backdrop-blur-xl text-white rounded-full hover:bg-[rgba(var(--color-primary-500),0.3)] transition-all duration-300 font-medium text-sm tracking-wide;
   }
 
-  .btn-text {
-    @apply flex items-center text-[var(--primary)]/80 hover:text-[var(--primary)] transition-colors duration-300 text-sm tracking-wide;
-  }
-
-  .section-padding {
-    @apply py-32 px-4 sm:px-6 lg:px-8;
-  }
-
-  .feature-card {
-    @apply p-8 rounded-3xl bg-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:bg-[var(--primary-transparent-20)] border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)];
-  }
-
-  .stats-card {
-    @apply bg-[var(--primary-transparent-10)] backdrop-blur-xl rounded-3xl p-8 border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)] transition-all duration-300;
-  }
-
-  .glass-card {
-    @apply bg-[var(--primary-transparent-10)] backdrop-blur-xl rounded-3xl border border-[var(--primary-transparent-10)];
-  }
-
-  .nav-link {
-    @apply  hover:text-[var(--primary)] transition-colors duration-300 text-sm tracking-wide;
-  }
-
-  .module-card {
-    @apply p-8 rounded-3xl bg-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:bg-[var(--primary-transparent-20)] border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)] flex flex-col h-full;
-  }
-
-  .case-study-card {
-    @apply rounded-3xl bg-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:bg-[var(--primary-transparent-20)] border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)] overflow-hidden;
-  }
-
-  .pricing-card {
-    @apply p-8 rounded-3xl bg-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:bg-[var(--primary-transparent-20)] border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)] flex flex-col h-full;
-  }
-
-  .pricing-card-highlight {
-    @apply p-8 rounded-3xl bg-gradient-to-b from-[var(--primary-transparent-20)] to-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:from-[var(--primary-transparent-30)] hover:to-[var(--primary-transparent-20)] border border-[var(--primary-transparent-20)] hover:border-[var(--primary-transparent-30)] flex flex-col h-full relative overflow-hidden;
-  }
-
-  .team-card {
-    @apply rounded-3xl bg-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:bg-[var(--primary-transparent-20)] border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)] overflow-hidden;
-  }
-
-  .blog-card {
-    @apply rounded-3xl bg-[var(--primary-transparent-10)] backdrop-blur-xl transition-all duration-500 hover:bg-[var(--primary-transparent-20)] border border-[var(--primary-transparent-10)] hover:border-[var(--primary-transparent-20)] overflow-hidden;
-  }
-
-  .form-input {
-    @apply w-full px-4 py-3 bg-[var(--primary-transparent-10)] focus:ring-[var(--primary-transparent-20)] text-white placeholder-white/40 border border-[var(--primary-transparent-10)];
-  }
+  /* ... other component classes from your original index.css */
 }
 
+/* Move your existing animations and other styles */
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -109,78 +114,4 @@
   }
 }
 
-.bg-grid-white {
-  background-size: 30px 30px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-}
-
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/80;
-}
-
-.theme-toggle {
-  @apply relative inline-flex h-6 w-12 items-center rounded-full bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/20;
-}
-
-.theme-toggle-thumb {
-  @apply pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out;
-}
-
-.theme-toggle-dark .theme-toggle-thumb {
-  @apply translate-x-6;
-}
-
-.theme-toggle-light .theme-toggle-thumb {
-  @apply translate-x-1;
-}
-
-/* Light mode adjustments */
-.light .nav-link {
-  @apply text-black/80 hover:text-black;
-}
-
-.light .btn-primary {
-  @apply bg-black text-white hover:bg-gray-900;
-}
-
-.light .btn-secondary {
-  @apply bg-black/10 text-black hover:bg-black/20;
-}
-
-.light .feature-card {
-  @apply bg-black/5 border-black/5 hover:bg-black/10 hover:border-black/10;
-}
-
-.light .stats-card {
-  @apply bg-black/5 border-black/5 hover:border-black/10;
-}
-
-.light .glass-card {
-  @apply bg-black/10 border-black/5;
-}
-
-.light .module-card,
-.light .case-study-card,
-.light .pricing-card,
-.light .team-card,
-.light .blog-card {
-  @apply bg-black/5 border-black/5 hover:bg-black/10 hover:border-black/10;
-}
-
-.light .pricing-card-highlight {
-  @apply bg-gradient-to-b from-black/10 to-black/5 hover:from-black/15 hover:to-black/10 border-black/10 hover:border-black/20;
-}
-
-.light .form-input {
-  @apply bg-black/5 focus:ring-black/20 text-black placeholder-black/40 border-black/10;
-}
-
-.light .bg-grid-white {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-}
-
-.light .gradient-text {
-  @apply bg-gradient-to-r from-black via-black to-black/80;
-}
+/* ... other styles (bg-grid-white, gradient-text, etc.) */

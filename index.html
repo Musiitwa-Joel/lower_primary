@@ -2,10 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <base href="/" />
 
-    <!-- ✅ Fallback Meta Tags for SEO -->
+    <!-- SEO Meta Tags -->
     <title>Tredumo | Transforming Education in Uganda</title>
     <meta
       name="description"
@@ -17,7 +20,7 @@
     />
     <meta name="author" content="Tredumo Team" />
 
-    <!-- ✅ Social Media Meta Tags (Fallbacks for Helmet) -->
+    <!-- Social Media Meta Tags -->
     <meta
       property="og:title"
       content="Tredumo | Transforming Education in Uganda"
@@ -28,9 +31,8 @@
     />
     <meta property="og:image" content="https://tredumo.com/social-banner.jpg" />
     <meta property="og:url" content="https://tredumo.com" />
-    <meta property="og:type" content="website" />
-
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og'type" content="website" />
+    <meta name="twitter:card" content="summar'y_large_image" />
     <meta
       name="twitter:title"
       content="Tredumo | Transforming Education in Uganda"
@@ -44,11 +46,124 @@
       content="https://tredumo.com/social-banner.jpg"
     />
 
-    <!-- Optional: Theme color for mobile -->
-    <meta name="theme-color" content="#0f172a" />
+    <!-- Theme color (using CSS variable for dynamic theming) -->
+    <meta name="theme-color" content="var(--color-primary-500, #8a87d8)" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Fonts and Icons -->
+    <link
+      href="/assets/fonts/material-design-icons/MaterialIconsOutlined.css"
+      rel="stylesheet"
+    />
+    <link href="/assets/fonts/inter/inter.css" rel="stylesheet" />
+    <link href="/assets/fonts/meteocons/style.css" rel="stylesheet" />
+    <link href="/assets/tailwind-base.css" rel="stylesheet" />
+
+    <!-- FUSE Splash Screen CSS -->
+    <style>
+      body #fuse-splash-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #111827;
+        color: #f9fafb;
+        z-index: 999999;
+        pointer-events: none;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      body #fuse-splash-screen img {
+        width: 120px;
+        max-width: 120px;
+      }
+
+      #spinner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+        width: 56px;
+      }
+
+      #spinner > div {
+        width: 12px;
+        height: 12px;
+        background-color: var(
+          --color-primary-500,
+          #8a87d8
+        ); /* Dynamic primary color */
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: fuse-bouncedelay 1s infinite ease-in-out both;
+        animation: fuse-bouncedelay 1s infinite ease-in-out both;
+      }
+
+      #spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+
+      #spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+
+      @-webkit-keyframes fuse-bouncedelay {
+        0%,
+        80%,
+        100% {
+          -webkit-transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      @keyframes fuse-bouncedelay {
+        0%,
+        80%,
+        100% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="flex">
+      <!-- FUSE Splash Screen -->
+      <div id="fuse-splash-screen">
+        <div class="logo">
+          <img
+            width="128"
+            src="https://tredumo.com/api/university/tred-logo.png"
+            alt="logo"
+          />
+        </div>
+        <div id="spinner">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

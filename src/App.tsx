@@ -63,10 +63,12 @@ import TermsPage from "./pages/TermsOfServicePage";
 import "../public/fonts/fonts.css";
 import ScrollToTop from "../src/components/ScrollToTop";
 import { generateThemeCSS, getCurrentTheme } from "./config/themeConfig";
+import { getCurrentSchoolConfig } from "./config/schoolConfig";
 
 function App() {
   const [theme, setTheme] = useState("light");
-  const themeConfig = getCurrentTheme();
+  const schoolConfig = getCurrentSchoolConfig();
+  const themeConfig = getCurrentTheme(schoolConfig.themeId);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -84,7 +86,7 @@ function App() {
     style.id = "theme-styles";
     style.textContent = generateThemeCSS(themeConfig);
     document.head.appendChild(style);
-  }, []);
+  }, [themeConfig]);
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";

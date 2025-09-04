@@ -64,17 +64,17 @@ export interface DesignTokens {
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
-    '3xl': string;
-    '4xl': string;
+    "2xl": string;
+    "3xl": string;
+    "4xl": string;
   };
   borderRadius: {
     sm: string;
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
-    '3xl': string;
+    "2xl": string;
+    "3xl": string;
     full: string;
   };
   shadows: {
@@ -82,7 +82,7 @@ export interface DesignTokens {
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
+    "2xl": string;
   };
   typography: {
     fontFamily: {
@@ -95,11 +95,11 @@ export interface DesignTokens {
       base: string;
       lg: string;
       xl: string;
-      '2xl': string;
-      '3xl': string;
-      '4xl': string;
-      '5xl': string;
-      '6xl': string;
+      "2xl": string;
+      "3xl": string;
+      "4xl": string;
+      "5xl": string;
+      "6xl": string;
     };
     fontWeight: {
       light: number;
@@ -111,87 +111,87 @@ export interface DesignTokens {
   };
 }
 
-// Default design system (can be customized per school)
-export const defaultDesignTokens: DesignTokens = {
+// Tredumo design system - Update this for different institutions
+export const tredumoDesignTokens: DesignTokens = {
   colors: {
     primary: {
-      50: '#f0f9ff',
-      100: '#e0f2fe',
-      200: '#bae6fd',
-      300: '#7dd3fc',
-      400: '#38bdf8',
-      500: '#0ea5e9', // Main brand color
-      600: '#0284c7',
-      700: '#0369a1',
-      800: '#075985',
-      900: '#0c4a6e',
+      50: "#f3f2fb",
+      100: "#e9e8f8",
+      200: "#d3d1f1",
+      300: "#bcbaea",
+      400: "#a5a3e0",
+      500: "#8a87d8", // Main brand color - Tredumo Purple
+      600: "#6f6cac",
+      700: "#535181",
+      800: "#383655",
+      900: "#1c1b2a",
     },
     secondary: {
-      50: '#fefce8',
-      100: '#fef9c3',
-      200: '#fef08a',
-      300: '#fde047',
-      400: '#facc15',
-      500: '#eab308', // Secondary brand color
-      600: '#ca8a04',
-      700: '#a16207',
-      800: '#854d0e',
-      900: '#713f12',
+      50: "#f0f9ff",
+      100: "#e0f2fe",
+      200: "#bae6fd",
+      300: "#7dd3fc",
+      400: "#38bdf8",
+      500: "#0ea5e9", // Secondary brand color - Sky Blue
+      600: "#0284c7",
+      700: "#0369a1",
+      800: "#075985",
+      900: "#0c4a6e",
     },
     accent: {
-      50: '#f0fdf4',
-      100: '#dcfce7',
-      200: '#bbf7d0',
-      300: '#86efac',
-      400: '#4ade80',
-      500: '#22c55e', // Accent color
-      600: '#16a34a',
-      700: '#15803d',
-      800: '#166534',
-      900: '#14532d',
+      50: "#f0fdf4",
+      100: "#dcfce7",
+      200: "#bbf7d0",
+      300: "#86efac",
+      400: "#4ade80",
+      500: "#22c55e", // Accent color - Green
+      600: "#16a34a",
+      700: "#15803d",
+      800: "#166534",
+      900: "#14532d",
     },
     neutral: {
-      50: '#fafafa',
-      100: '#f5f5f5',
-      200: '#e5e5e5',
-      300: '#d4d4d4',
-      400: '#a3a3a3',
-      500: '#737373',
-      600: '#525252',
-      700: '#404040',
-      800: '#262626',
-      900: '#171717',
+      50: "#fafafa",
+      100: "#f5f5f5",
+      200: "#e5e5e5",
+      300: "#d4d4d4",
+      400: "#a3a3a3",
+      500: "#737373",
+      600: "#525252",
+      700: "#404040",
+      800: "#1a1a2e", // Dark background
+      900: "#0e0e15", // Darker background
     },
-    success: '#22c55e',
-    warning: '#f59e0b',
-    error: '#ef4444',
-    info: '#3b82f6',
+    success: "#22c55e",
+    warning: "#f59e0b",
+    error: "#ef4444",
+    info: "#3b82f6",
   },
   spacing: {
-    xs: '0.5rem',
-    sm: '1rem',
-    md: '1.5rem',
-    lg: '2rem',
-    xl: '3rem',
-    '2xl': '4rem',
-    '3xl': '6rem',
-    '4xl': '8rem',
+    xs: "0.5rem",
+    sm: "1rem",
+    md: "1.5rem",
+    lg: "2rem",
+    xl: "3rem",
+    "2xl": "4rem",
+    "3xl": "6rem",
+    "4xl": "8rem",
   },
   borderRadius: {
-    sm: '0.375rem',
-    md: '0.5rem',
-    lg: '0.75rem',
-    xl: '1rem',
-    '2xl': '1.5rem',
-    '3xl': '2rem',
-    full: '9999px',
+    sm: "0.375rem",
+    md: "0.5rem",
+    lg: "0.75rem",
+    xl: "1rem",
+    "2xl": "1.5rem",
+    "3xl": "2rem",
+    full: "9999px",
   },
   shadows: {
-    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-    md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-    '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+    sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+    lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+    xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+    "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
   },
   typography: {
     fontFamily: {
@@ -199,16 +199,16 @@ export const defaultDesignTokens: DesignTokens = {
       secondary: '"Poppins", "Google Sans", sans-serif',
     },
     fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '3.75rem',
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
     },
     fontWeight: {
       light: 300,
@@ -225,40 +225,40 @@ export const animations = {
   fadeIn: {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   slideUp: {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   slideInLeft: {
     initial: { opacity: 0, x: -20 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   slideInRight: {
     initial: { opacity: 0, x: 20 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   staggerContainer: {
     initial: { opacity: 0 },
     animate: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   },
   staggerItem: {
     initial: { opacity: 0, y: 20 },
     animate: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
-  }
+      transition: { duration: 0.5 },
+    },
+  },
 };
 
 // Button variants
@@ -284,7 +284,7 @@ export const buttonVariants = {
     inline-flex items-center justify-center px-6 py-3 rounded-full
     text-primary-500 hover:bg-primary-50 font-medium
     transition-all duration-300
-  `
+  `,
 };
 
 // Loading animation components
@@ -335,7 +335,7 @@ export const loadingAnimations = {
     .animate-fadeInUp {
       animation: fadeInUp 0.6s ease-out;
     }
-  `
+  `,
 };
 
 // Function to generate CSS custom properties from design tokens
@@ -402,17 +402,17 @@ export const generateCSSVariables = (tokens: DesignTokens): string => {
       --spacing-md: ${tokens.spacing.md};
       --spacing-lg: ${tokens.spacing.lg};
       --spacing-xl: ${tokens.spacing.xl};
-      --spacing-2xl: ${tokens.spacing['2xl']};
-      --spacing-3xl: ${tokens.spacing['3xl']};
-      --spacing-4xl: ${tokens.spacing['4xl']};
+      --spacing-2xl: ${tokens.spacing["2xl"]};
+      --spacing-3xl: ${tokens.spacing["3xl"]};
+      --spacing-4xl: ${tokens.spacing["4xl"]};
       
       /* Border Radius */
       --radius-sm: ${tokens.borderRadius.sm};
       --radius-md: ${tokens.borderRadius.md};
       --radius-lg: ${tokens.borderRadius.lg};
       --radius-xl: ${tokens.borderRadius.xl};
-      --radius-2xl: ${tokens.borderRadius['2xl']};
-      --radius-3xl: ${tokens.borderRadius['3xl']};
+      --radius-2xl: ${tokens.borderRadius["2xl"]};
+      --radius-3xl: ${tokens.borderRadius["3xl"]};
       --radius-full: ${tokens.borderRadius.full};
       
       /* Shadows */
@@ -420,19 +420,27 @@ export const generateCSSVariables = (tokens: DesignTokens): string => {
       --shadow-md: ${tokens.shadows.md};
       --shadow-lg: ${tokens.shadows.lg};
       --shadow-xl: ${tokens.shadows.xl};
-      --shadow-2xl: ${tokens.shadows['2xl']};
+      --shadow-2xl: ${tokens.shadows["2xl"]};
       
       /* Typography */
       --font-family-primary: ${tokens.typography.fontFamily.primary};
       --font-family-secondary: ${tokens.typography.fontFamily.secondary};
     }
     
-    ${Object.values(loadingAnimations).join('\n')}
+    ${Object.values(loadingAnimations).join("\n")}
   `;
 };
 
 // Utility function to get design tokens (can be customized per school)
-export const getDesignTokens = (): DesignTokens => {
+export const getDesignTokens = (schoolId?: string): DesignTokens => {
   // In a real implementation, this could be dynamic based on school configuration
-  return defaultDesignTokens;
+  // For now, return the Tredumo design tokens, but this can be extended for multiple schools
+  switch (schoolId) {
+    case "tredumo":
+    default:
+      return tredumoDesignTokens;
+  }
 };
+
+// Export default design tokens for backward compatibility
+export const defaultDesignTokens = tredumoDesignTokens;

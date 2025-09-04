@@ -67,6 +67,9 @@ export interface SchoolConfig {
   logo: string;
   favicon: string;
 
+  // Theme Configuration
+  themeId?: string; // Optional theme identifier for multi-school support
+
   // Features
   features: string[];
 
@@ -155,6 +158,8 @@ export const defaultSchoolConfig: SchoolConfig = {
 
   logo: "https://cdn.worldvectorlogo.com/logos/tredumo.svg",
   favicon: "/favicon.ico",
+
+  themeId: "tredumo", // Use Tredumo theme
 
   features: [
     "Modern Computer Labs",

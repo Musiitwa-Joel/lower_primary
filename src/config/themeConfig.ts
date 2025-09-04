@@ -64,17 +64,17 @@ export interface ThemeConfig {
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
-    '3xl': string;
-    '4xl': string;
+    "2xl": string;
+    "3xl": string;
+    "4xl": string;
   };
   borderRadius: {
     sm: string;
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
-    '3xl': string;
+    "2xl": string;
+    "3xl": string;
     full: string;
   };
   shadows: {
@@ -82,7 +82,7 @@ export interface ThemeConfig {
     md: string;
     lg: string;
     xl: string;
-    '2xl': string;
+    "2xl": string;
   };
   typography: {
     fontFamily: {
@@ -95,11 +95,11 @@ export interface ThemeConfig {
       base: string;
       lg: string;
       xl: string;
-      '2xl': string;
-      '3xl': string;
-      '4xl': string;
-      '5xl': string;
-      '6xl': string;
+      "2xl": string;
+      "3xl": string;
+      "4xl": string;
+      "5xl": string;
+      "6xl": string;
     };
     fontWeight: {
       light: number;
@@ -111,89 +111,89 @@ export interface ThemeConfig {
   };
 }
 
-// Default theme configuration
-export const defaultTheme: ThemeConfig = {
+// School-specific theme configuration - Update this for different institutions
+export const tredumoTheme: ThemeConfig = {
   colors: {
     primary: {
-      50: '#f0f9ff',
-      100: '#e0f2fe',
-      200: '#bae6fd',
-      300: '#7dd3fc',
-      400: '#38bdf8',
-      500: '#0ea5e9', // Main brand color
-      600: '#0284c7',
-      700: '#0369a1',
-      800: '#075985',
-      900: '#0c4a6e',
+      50: "#f3f2fb",
+      100: "#e9e8f8",
+      200: "#d3d1f1",
+      300: "#bcbaea",
+      400: "#a5a3e0",
+      500: "#8a87d8", // Main brand color - Tredumo Purple
+      600: "#6f6cac",
+      700: "#535181",
+      800: "#383655",
+      900: "#1c1b2a",
     },
     secondary: {
-      50: '#fefce8',
-      100: '#fef9c3',
-      200: '#fef08a',
-      300: '#fde047',
-      400: '#facc15',
-      500: '#eab308', // Secondary brand color
-      600: '#ca8a04',
-      700: '#a16207',
-      800: '#854d0e',
-      900: '#713f12',
+      50: "#f0f9ff",
+      100: "#e0f2fe",
+      200: "#bae6fd",
+      300: "#7dd3fc",
+      400: "#38bdf8",
+      500: "#0ea5e9", // Secondary brand color - Sky Blue
+      600: "#0284c7",
+      700: "#0369a1",
+      800: "#075985",
+      900: "#0c4a6e",
     },
     accent: {
-      50: '#f0fdf4',
-      100: '#dcfce7',
-      200: '#bbf7d0',
-      300: '#86efac',
-      400: '#4ade80',
-      500: '#22c55e', // Accent color
-      600: '#16a34a',
-      700: '#15803d',
-      800: '#166534',
-      900: '#14532d',
+      50: "#f0fdf4",
+      100: "#dcfce7",
+      200: "#bbf7d0",
+      300: "#86efac",
+      400: "#4ade80",
+      500: "#22c55e", // Accent color - Green
+      600: "#16a34a",
+      700: "#15803d",
+      800: "#166534",
+      900: "#14532d",
     },
     neutral: {
-      50: '#fafafa',
-      100: '#f5f5f5',
-      200: '#e5e5e5',
-      300: '#d4d4d4',
-      400: '#a3a3a3',
-      500: '#737373',
-      600: '#525252',
-      700: '#404040',
-      800: '#262626',
-      900: '#171717',
+      50: "#fafafa",
+      100: "#f5f5f5",
+      200: "#e5e5e5",
+      300: "#d4d4d4",
+      400: "#a3a3a3",
+      500: "#737373",
+      600: "#525252",
+      700: "#404040",
+      800: "#1a1a2e", // Dark background
+      900: "#0e0e15", // Darker background
     },
     semantic: {
-      success: '#22c55e',
-      warning: '#f59e0b',
-      error: '#ef4444',
-      info: '#3b82f6',
+      success: "#22c55e",
+      warning: "#f59e0b",
+      error: "#ef4444",
+      info: "#3b82f6",
     },
   },
   spacing: {
-    xs: '0.5rem',
-    sm: '1rem',
-    md: '1.5rem',
-    lg: '2rem',
-    xl: '3rem',
-    '2xl': '4rem',
-    '3xl': '6rem',
-    '4xl': '8rem',
+    xs: "0.5rem",
+    sm: "1rem",
+    md: "1.5rem",
+    lg: "2rem",
+    xl: "3rem",
+    "2xl": "4rem",
+    "3xl": "6rem",
+    "4xl": "8rem",
   },
   borderRadius: {
-    sm: '0.375rem',
-    md: '0.5rem',
-    lg: '0.75rem',
-    xl: '1rem',
-    '2xl': '1.5rem',
-    '3xl': '2rem',
-    full: '9999px',
+    sm: "0.375rem",
+    md: "0.5rem",
+    lg: "0.75rem",
+    xl: "1rem",
+    "2xl": "1.5rem",
+    "3xl": "2rem",
+    full: "9999px",
   },
   shadows: {
-    sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-    md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-    lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-    xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-    '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+    sm: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+    md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+    lg: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+    xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+    "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
   },
   typography: {
     fontFamily: {
@@ -201,16 +201,16 @@ export const defaultTheme: ThemeConfig = {
       secondary: '"Poppins", "Google Sans", sans-serif',
     },
     fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '3.75rem',
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
     },
     fontWeight: {
       light: 300,
@@ -247,13 +247,14 @@ export const buttonStyles = {
     text-primary-500 hover:bg-primary-500/10 font-medium
     transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
   `,
-  glass: (theme: string) => theme === 'dark' 
-    ? `inline-flex items-center justify-center px-6 py-3 rounded-full
+  glass: (theme: string) =>
+    theme === "dark"
+      ? `inline-flex items-center justify-center px-6 py-3 rounded-full
        bg-white/10 hover:bg-white/20 text-white backdrop-blur-xl border border-white/20
        font-medium transition-all duration-300 transform hover:scale-105`
-    : `inline-flex items-center justify-center px-6 py-3 rounded-full
+      : `inline-flex items-center justify-center px-6 py-3 rounded-full
        bg-black/10 hover:bg-black/20 text-black backdrop-blur-xl border border-black/20
-       font-medium transition-all duration-300 transform hover:scale-105`
+       font-medium transition-all duration-300 transform hover:scale-105`,
 };
 
 // Loading animations
@@ -352,20 +353,23 @@ export const loadingAnimations = {
     .animate-glow {
       animation: glow 2s ease-in-out infinite;
     }
-  `
+  `,
 };
 
 // Card component styles
 export const cardStyles = {
-  glass: (theme: string) => theme === 'dark'
-    ? 'bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl'
-    : 'bg-black/5 backdrop-blur-xl border border-black/10 rounded-2xl',
-  feature: (theme: string) => theme === 'dark'
-    ? 'bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20 backdrop-blur-xl border rounded-2xl transition-all duration-300 hover:scale-105'
-    : 'bg-black/5 hover:bg-black/10 border-black/10 hover:border-black/20 backdrop-blur-xl border rounded-2xl transition-all duration-300 hover:scale-105',
-  pricing: (theme: string) => theme === 'dark'
-    ? 'bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20 backdrop-blur-xl border rounded-3xl transition-all duration-300'
-    : 'bg-black/5 hover:bg-black/10 border-black/10 hover:border-black/20 backdrop-blur-xl border rounded-3xl transition-all duration-300'
+  glass: (theme: string) =>
+    theme === "dark"
+      ? "bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl"
+      : "bg-black/5 backdrop-blur-xl border border-black/10 rounded-2xl",
+  feature: (theme: string) =>
+    theme === "dark"
+      ? "bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20 backdrop-blur-xl border rounded-2xl transition-all duration-300 hover:scale-105"
+      : "bg-black/5 hover:bg-black/10 border-black/10 hover:border-black/20 backdrop-blur-xl border rounded-2xl transition-all duration-300 hover:scale-105",
+  pricing: (theme: string) =>
+    theme === "dark"
+      ? "bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/20 backdrop-blur-xl border rounded-3xl transition-all duration-300"
+      : "bg-black/5 hover:bg-black/10 border-black/10 hover:border-black/20 backdrop-blur-xl border rounded-3xl transition-all duration-300",
 };
 
 // Animation presets
@@ -373,40 +377,40 @@ export const animationPresets = {
   fadeIn: {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   slideUp: {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   slideInLeft: {
     initial: { opacity: 0, x: -20 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   slideInRight: {
     initial: { opacity: 0, x: 20 },
     animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   },
   staggerContainer: {
     initial: { opacity: 0 },
     animate: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   },
   staggerItem: {
     initial: { opacity: 0, y: 20 },
     animate: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
-    }
-  }
+      transition: { duration: 0.5 },
+    },
+  },
 };
 
 // Function to generate CSS custom properties from theme config
@@ -468,12 +472,20 @@ export const generateThemeCSS = (theme: ThemeConfig): string => {
       --color-info: ${theme.colors.semantic.info};
     }
     
-    ${Object.values(loadingAnimations).join('\n')}
+    ${Object.values(loadingAnimations).join("\n")}
   `;
 };
 
 // Utility function to get current theme
-export const getCurrentTheme = (): ThemeConfig => {
+export const getCurrentTheme = (schoolId?: string): ThemeConfig => {
   // In a real implementation, this could be dynamic based on school configuration
-  return defaultTheme;
+  // For now, return the Tredumo theme, but this can be extended for multiple schools
+  switch (schoolId) {
+    case "tredumo":
+    default:
+      return tredumoTheme;
+  }
 };
+
+// Export default theme for backward compatibility
+export const defaultTheme = tredumoTheme;
