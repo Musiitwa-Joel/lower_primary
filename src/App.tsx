@@ -24,6 +24,12 @@ import ScholarshipsPage from "./pages/admissions/ScholarshipsPage";
 import FeesPage from "./pages/admissions/FeesPage";
 import CampusToursPage from "./pages/admissions/CampusToursPage";
 import AdmissionsFAQPage from "./pages/admissions/AdmissionsFAQPage";
+import EntranceExamsPage from "./pages/admissions/EntranceExamsPage";
+import TransferStudentsPage from "./pages/admissions/TransferStudentsPage";
+import BursariesPage from "./pages/admissions/BursariesPage";
+import PaymentPlansPage from "./pages/admissions/PaymentPlansPage";
+import ContactAdmissionsPage from "./pages/admissions/ContactAdmissionsPage";
+import ImportantDatesPage from "./pages/admissions/ImportantDatesPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -206,6 +212,40 @@ function App() {
             path="/admissions/faq"
             element={
               <AdmissionsFAQPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/exams"
+            element={
+              <EntranceExamsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/transfer"
+            element={
+              <TransferStudentsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/bursaries"
+            element={<BursariesPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/admissions/payment-plans"
+            element={
+              <PaymentPlansPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/contact"
+            element={
+              <ContactAdmissionsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/admissions/dates"
+            element={
+              <ImportantDatesPage theme={theme} toggleTheme={toggleTheme} />
             }
           />
           {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
