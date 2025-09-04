@@ -262,23 +262,6 @@ function App() {
           />
 
           {/* Student life routes */}
-          {/* { name: "Sports & Athletics", path: "/student-life/sports" },
-            { name: "Clubs & Societies", path: "/student-life/clubs" },
-            { name: "Arts & Culture", path: "/student-life/arts" },
-            { name: "Community Service", path: "/student-life/community" },
-
-            { name: "Boarding Houses", path: "/student-life/boarding" },
-            { name: "Dining Services", path: "/student-life/dining" },
-            { name: "Health Center", path: "/student-life/health" },
-            { name: "Transportation", path: "/student-life/transport" },
-
-            { name: "Counseling Services", path: "/student-life/counseling" },
-            {
-              name: "Academic Support",
-              path: "/student-life/academic-support",
-            },
-            { name: "Career Guidance", path: "/student-life/career" },
-            { name: "Mental Wellness", path: "/student-life/wellness" }, */}
 
           <Route
             path="/student-life/academic-support"
