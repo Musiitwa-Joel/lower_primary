@@ -42,11 +42,23 @@ import MentalWellnessPage from "./pages/student-life/MentalWellnessPage";
 import SportsAthleticsPage from "./pages/student-life/SportsAthleticsPage";
 import ClubsSocietiesPage from "./pages/student-life/ClubsSocietiesPage";
 import TransportationPage from "./pages/student-life/TransportationPage";
+import AccreditationsPage from "./pages/about/AccreditationsPage";
+import AlumniSuccessPage from "./pages/about/AlumniSuccessPage";
+import AwardsAchievementsPage from "./pages/about/AwardsAchievementsPage";
+import BoardOfDirectorsPage from "./pages/about/BoardOfDirectorsPage";
+import LeadershipTeamPage from "./pages/about/LeadershipTeamPage";
+import MissionVisionPage from "./pages/about/MissionVisionPage";
+import OurStoryPage from "./pages/about/OurStoryPage";
+import SchoolValuesPage from "./pages/about/SchoolValuesPage";
+import TeachingStaffPage from "./pages/about/TeachingStaffPage";
+import AdministrativeStaffPage from "./pages/about/AdministrativeStaffPage";
+import SupportStaffPage from "./pages/about/SupportStaffPage";
+import PartnershipsPage from "./pages/about/PartnershipsPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
-import PrivacyPage from "./pages/PrivacyPage";
+import PrivacyPage from "./pages/PrivacyPolicyPage";
 import Cookies from "./pages/Cookies";
-import TermsPage from "./pages/TermsPage";
+import TermsPage from "./pages/TermsOfServicePage";
 
 import "../public/fonts/fonts.css";
 import ScrollToTop from "../src/components/ScrollToTop";
@@ -336,13 +348,94 @@ function App() {
             }
           />
 
+          {/* About routes */}
+
+          <Route
+            path="/about/story"
+            element={<OurStoryPage theme={theme} toggleTheme={toggleTheme} />}
+          />
+          <Route
+            path="/about/mission"
+            element={
+              <MissionVisionPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/leadership"
+            element={
+              <LeadershipTeamPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/values"
+            element={
+              <SchoolValuesPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/teachers"
+            element={
+              <TeachingStaffPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/admin"
+            element={
+              <AdministrativeStaffPage
+                theme={theme}
+                toggleTheme={toggleTheme}
+              />
+            }
+          />
+          <Route
+            path="/about/support"
+            element={
+              <SupportStaffPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/board"
+            element={
+              <BoardOfDirectorsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/awards"
+            element={
+              <AwardsAchievementsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/accreditations"
+            element={
+              <AccreditationsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/partnerships"
+            element={
+              <PartnershipsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/about/alumni"
+            element={
+              <AlumniSuccessPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
           {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
 
           <Route path="/careers" element={<CareersPage theme={theme} />} />
           <Route path="/contact" element={<ContactPage theme={theme} />} />
-          <Route path="/privacy" element={<PrivacyPage theme={theme} />} />
+          <Route
+            path="/privacy"
+            element={<PrivacyPage theme={theme} toggleTheme={toggleTheme} />}
+          />
           <Route path="/cookies" element={<Cookies theme={theme} />} />
-          <Route path="/terms" element={<TermsPage theme={theme} />} />
+          <Route
+            path="/terms"
+            element={<TermsPage theme={theme} toggleTheme={toggleTheme} />}
+          />
         </Routes>
         {/* <Footer theme={theme} /> */}
       </div>
