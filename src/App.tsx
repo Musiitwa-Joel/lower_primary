@@ -30,6 +30,18 @@ import BursariesPage from "./pages/admissions/BursariesPage";
 import PaymentPlansPage from "./pages/admissions/PaymentPlansPage";
 import ContactAdmissionsPage from "./pages/admissions/ContactAdmissionsPage";
 import ImportantDatesPage from "./pages/admissions/ImportantDatesPage";
+import AcademicSupportPage from "./pages/student-life/AcademicSupportPage";
+import ArtsCulturePage from "./pages/student-life/ArtsCulturePage";
+import BoardingHousesPage from "./pages/student-life/BoardingHousesPage";
+import CareerGuidancePage from "./pages/student-life/CareerGuidancePage";
+import CommunityServicePage from "./pages/student-life/CommunityServicePage";
+import CounselingServicesPage from "./pages/student-life/CounselingServicesPage";
+import DiningServicesPage from "./pages/student-life/DiningServicesPage";
+import HealthCenterPage from "./pages/student-life/HealthCenterPage";
+import MentalWellnessPage from "./pages/student-life/MentalWellnessPage";
+import SportsAthleticsPage from "./pages/student-life/SportsAthleticsPage";
+import ClubsSocietiesPage from "./pages/student-life/ClubsSocietiesPage";
+import TransportationPage from "./pages/student-life/TransportationPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -248,6 +260,99 @@ function App() {
               <ImportantDatesPage theme={theme} toggleTheme={toggleTheme} />
             }
           />
+
+          {/* Student life routes */}
+          {/* { name: "Sports & Athletics", path: "/student-life/sports" },
+            { name: "Clubs & Societies", path: "/student-life/clubs" },
+            { name: "Arts & Culture", path: "/student-life/arts" },
+            { name: "Community Service", path: "/student-life/community" },
+
+            { name: "Boarding Houses", path: "/student-life/boarding" },
+            { name: "Dining Services", path: "/student-life/dining" },
+            { name: "Health Center", path: "/student-life/health" },
+            { name: "Transportation", path: "/student-life/transport" },
+
+            { name: "Counseling Services", path: "/student-life/counseling" },
+            {
+              name: "Academic Support",
+              path: "/student-life/academic-support",
+            },
+            { name: "Career Guidance", path: "/student-life/career" },
+            { name: "Mental Wellness", path: "/student-life/wellness" }, */}
+
+          <Route
+            path="/student-life/academic-support"
+            element={
+              <AcademicSupportPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/arts"
+            element={
+              <ArtsCulturePage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/boarding"
+            element={
+              <BoardingHousesPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/career"
+            element={
+              <CareerGuidancePage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/community"
+            element={
+              <CommunityServicePage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/counseling"
+            element={
+              <CounselingServicesPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/dining"
+            element={
+              <DiningServicesPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/health"
+            element={
+              <HealthCenterPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/wellness"
+            element={
+              <MentalWellnessPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/sports"
+            element={
+              <SportsAthleticsPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/clubs"
+            element={
+              <ClubsSocietiesPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+          <Route
+            path="/student-life/transport"
+            element={
+              <TransportationPage theme={theme} toggleTheme={toggleTheme} />
+            }
+          />
+
           {/* <Route path="/tredumo" element={<HomePage theme={theme} />} /> */}
 
           <Route path="/careers" element={<CareersPage theme={theme} />} />
