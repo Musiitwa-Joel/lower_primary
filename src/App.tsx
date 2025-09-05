@@ -99,14 +99,13 @@ function App() {
   return (
     <Router>
       <div
-        className={`min-h-screen ${
+        className={`min-h-screen w-full max-w-[1440px] mx-auto px-4 ${
           theme === "dark"
             ? "bg-[var(--dark-bg)] text-white"
             : "bg-white text-black"
         }`}
       >
         <ScrollToTop />
-        {/* <Navbar theme={theme} toggleTheme={toggleTheme} /> */}
         <Routes>
           <Route
             path="/"
